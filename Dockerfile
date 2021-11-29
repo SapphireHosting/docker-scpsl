@@ -9,15 +9,16 @@ RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" |
 RUN apt-get update
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
-RUN apt-get install -y ffmpeg
-RUN ffmpeg -version
-RUN apt-get install -y curl
-RUN apt-get install -y wget
-RUN apt-get install -y lib32gcc1
-RUN apt-get update
+RUN apt update
+RUN apt install preload
+RUN apt install -y ffmpeg
+
+RUN apt install -y curl
+RUN apt install -y wget
+RUN apt install -y lib32gcc1
+RUN apt update
 RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
-RUN apt-get install -y nodejs
+RUN apt install -y nodejs
 RUN npm -v
 RUN npm install -g npm
 RUN apt-get update
