@@ -12,7 +12,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt install preload
 RUN apt install -y ffmpeg
-
 RUN apt install -y curl
 RUN apt install -y wget
 RUN apt install -y lib32gcc1
@@ -21,12 +20,12 @@ RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt install -y nodejs
 RUN npm -v
 RUN npm install -g npm
-RUN apt-get update
+RUN apt update
 RUN dpkg --add-architecture i386
-RUN apt-get update
+RUN apt update
 RUN npm install --global yarn
-RUN apt-get update
-RUN apt-get install -y mono-complete
+RUN apt update
+RUN apt install -y mono-complete
 RUN adduser --home /home/container container --disabled-password --gecos "" --uid 999
 RUN usermod -a -G container container
 RUN chown -R container:container /home/container
