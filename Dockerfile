@@ -17,13 +17,9 @@ RUN apt install -y wget
 RUN apt install -y lib32gcc1
 RUN apt update
 RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
-RUN apt install -y nodejs
 RUN npm -v
-RUN npm install -g npm
 RUN apt update
 RUN dpkg --add-architecture i386
-RUN apt update
-RUN npm install --global yarn
 RUN apt update
 RUN apt install -y mono-complete
 RUN adduser --home /home/container container --disabled-password --gecos "" --uid 999
